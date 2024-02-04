@@ -5,7 +5,8 @@ from Lib import *
 if __name__ == '__main__' :
     vanban = "Đức Anh đẹp trai nhất thế giới"
     mau = "thế giới"
-    Search_kmp(vanban,mau)
+    temp = Rabin_karp(vanban,mau)
+    print("Search in index when use Rabin_karp:" + str(temp))
 
 #result
-#Search in index : 22     
+#Search in index when use Rabin_karp:22   

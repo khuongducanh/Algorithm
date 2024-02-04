@@ -5,7 +5,7 @@
 
 #Library
 import random 
-
+print("Warning : this is Library , No run code ")
 #return 1 : this is Prime 
 #return 0 : not Prime 
 def Check_Prime(x):
@@ -77,10 +77,30 @@ def Search_kmp(x, y):
             j += 1
 
             if j == m:
-                print("Search in index :", i - j)
+                return i - j
                 j = lps[j - 1]
         else:
             if j != 0:
                 j = lps[j - 1]
             else:
                 i += 1
+
+
+
+#Rabin-Karp : search string
+def hash_func(s):
+    return sum(ord(c) for c in s)
+
+def Rabin_karp(x, y):
+    n, m = len(x), len(y)
+
+    y_hash = hash_func(y)
+    x_hash = hash_func(x[:m])
+
+    for i in range(n - m + 1):
+        if x_hash == y_hash and x[i:i+m] == y:
+            return i
+
+        if i < n - m:
+            x_hash = hash_func(x[i+1:i+m+1])
+
