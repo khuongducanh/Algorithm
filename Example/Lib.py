@@ -6,8 +6,12 @@
 #Library
 import random 
 print("Warning : this is Library , No run code ")
+
+
+
 #return 1 : this is Prime 
 #return 0 : not Prime 
+#x : number
 def Check_Prime(x):
    if (x < 2):
       return False;
@@ -19,6 +23,7 @@ def Check_Prime(x):
 
 #return 1 : this is SquareNumber
 #return 0 : not SquareNumber
+#x : number
 def Check_SquareNumber(x):
    if (x < 1):
       return False;
@@ -32,6 +37,7 @@ def Check_SquareNumber(x):
 
 #return 1 : this is even number
 #return -1 : this is odd number
+#x : number
 def Check_even_odd(x):
     if x % 2 == 0:
         return 1
@@ -40,6 +46,7 @@ def Check_even_odd(x):
 
 
 #return 1 random string of characters
+#x : string
 def sort_and_random(x):
     char = list(x)
     random.shuffle(char)
@@ -66,6 +73,9 @@ def Create_Table_lps(x):
                 i += 1
     return lps
 
+#return : index or string
+#x : string main
+#y : string to find
 def Search_kmp(x, y):
     n, m = len(x), len(y)
     lps = Create_Table_lps(y)
@@ -91,6 +101,9 @@ def Search_kmp(x, y):
 def hash_func(s):
     return sum(ord(c) for c in s)
 
+#return : index or string
+#x : string main
+#y : string to find
 def Rabin_karp(x, y):
     n, m = len(x), len(y)
 
