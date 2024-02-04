@@ -5,11 +5,11 @@
 
 #return 1 : this is Prime 
 #return 0 : not Prime 
-def Check_Prime(n):
-   if (n < 2):
+def Check_Prime(x):
+   if (x < 2):
       return False;
-   for i in range(2, n):
-      if (n % i == 0):
+   for i in range(2, x):
+      if (x % i == 0):
          return False
    return True
 
@@ -25,6 +25,16 @@ def Check_SquareNumber(x):
          return True;
       i = i + 1
    return False
+
+
+#return 1 : this is even number
+#return -1 : this is odd number
+def Check_even_odd(x):
+    if x % 2 == 0:
+        return 1
+    else:
+        return -1 
+
 
 
 
