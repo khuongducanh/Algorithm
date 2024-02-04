@@ -1,12 +1,11 @@
 from Lib import *
 
+#example : KMP(Knuth-Morris-Pratt)
+
 if __name__ == '__main__' :
-    for i in range(10):
-        if Check_even_odd(i) == -1 :
-            print("Odd number : " + str(i))    
+    vanban = "Đức Anh đẹp trai nhất thế giới"
+    mau = "thế giới"
+    Search_kmp(vanban,mau)
+
 #result
-#Odd number : 1
-#Odd number : 3
-#Odd number : 5
-#Odd number : 7
-#Odd number : 9
+#Search in index : 22     
