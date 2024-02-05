@@ -5,8 +5,6 @@
 
 #Library
 import random 
-print("Warning : this is Library , No run code ")
-
 
 
 #return 1 : this is Prime 
@@ -116,4 +114,52 @@ def Rabin_karp(x, y):
 
         if i < n - m:
             x_hash = hash_func(x[i+1:i+m+1])
+
+
+
+#Quicksort : sort array
+#return : The array has been sorted 
+def Quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return Quick_sort(left) + middle + Quick_sort(right)
+
+
+
+
+
+#Mergesort : sort array
+#return : The array has been sorted 
+def Merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    mid = len(arr) // 2
+    left_half = arr[:mid]
+    right_half = arr[mid:]
+
+    left_half = Merge_sort(left_half)
+    right_half = Merge_sort(right_half)
+
+    return merge(left_half, right_half)
+
+def merge(left, right):
+    result = []
+    i = j = 0
+
+    # So sánh từng phần tử và trộn
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
 

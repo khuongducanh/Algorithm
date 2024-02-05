@@ -1,10 +1,11 @@
 from Lib import *
 
 if __name__ == '__main__' :
-    vanban = "Đức Anh đẹp trai nhất thế giới"
-    mau = "thế giới"
-    temp = Rabin_karp(vanban,mau)
-    print("Search in index when use Rabin_karp:" + str(temp))
+    my_list = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+    sorted_list = Merge_sort(my_list)
+
+    print("Danh sách đã sắp xếp:", sorted_list)
 
 #result
-#Search in index when use Rabin_karp:22   
+#Danh sách đã sắp xếp: [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
+
