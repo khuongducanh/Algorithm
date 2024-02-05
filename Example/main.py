@@ -1,11 +1,12 @@
+#Example
 from Lib import *
 
 if __name__ == '__main__' :
-    my_list = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
-    sorted_list = Merge_sort(my_list)
+    sorted_array = [1, 2, 2, 2, 3, 4, 5, 6] #=> The array has been sorted
+    result = binary_search(sorted_array, 6)
+    if result != -1:
+        print(f"value 2 in index : {result}")
+    else:
+        print("no value")        
 
-    print("Danh sách đã sắp xếp:", sorted_list)
-
-#result
-#Danh sách đã sắp xếp: [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
-
+#result : value 2 in index : 1.

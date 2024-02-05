@@ -5,8 +5,11 @@
 
 #Library
 import random 
+import bisect
+#
 
-
+#Algorithm basic
+#
 #return 1 : this is Prime 
 #return 0 : not Prime 
 #x : number
@@ -50,8 +53,10 @@ def sort_and_random(x):
     random.shuffle(char)
     return ''.join(char)
 
+###
 
 
+#Algorithm with String
 #KMP (Knuth-Morris-Pratt): search string
 def Create_Table_lps(x):
     m = len(x)
@@ -114,10 +119,12 @@ def Rabin_karp(x, y):
 
         if i < n - m:
             x_hash = hash_func(x[i+1:i+m+1])
+##
 
 
-
-#Quicksort : sort array
+#Algorithm Sort
+#
+#Quick sort : sort array
 #return : The array has been sorted 
 def Quick_sort(arr):
     if len(arr) <= 1:
@@ -130,9 +137,7 @@ def Quick_sort(arr):
 
 
 
-
-
-#Mergesort : sort array
+#Merge sort : sort array
 #return : The array has been sorted 
 def Merge_sort(arr):
     if len(arr) <= 1:
@@ -163,3 +168,55 @@ def merge(left, right):
     result.extend(right[j:])
     return result
 
+
+
+#Linear sort : sort array
+#return : The array has been sorted 
+def Linear_sort(arr):
+    max_value = max(arr)
+    count = [0] * (max_value + 1)
+    for value in arr:
+        count[value] += 1
+
+    result = []
+    for i in range(len(count)):
+        result.extend([i] * count[i])
+
+    return result
+##
+
+
+#Algorithm Search
+#
+#Binary search 
+#return index of value 
+#return -1 : no value
+#arr : array[]
+#x   : value search
+#Note: array must be sorted
+def binary_search(arr, x):
+    index = bisect.bisect_left(arr, x)
+    if index != len(arr) and arr[index] == x:
+        return index
+    else:
+        return -1
+#example
+#sorted_array = [1, 2, 2, 2, 3, 4, 5, 6] #=> The array has been sorted
+#result = binary_search(sorted_array, 2)
+#if result != -1:
+#    print(f"value 2 in index : {result}.")
+#else:
+#    print("no value")        
+#result : value 2 in index 1
+
+
+#Linear search : 
+#return index of value 
+#return -1 : no value
+#arr : array[]
+#x   : value search
+def linear_search(arr, x):
+    for i in range(len(arr)):
+        if arr[i] == x:
+            return i  
+    return -1 
